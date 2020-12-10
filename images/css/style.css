@@ -1,0 +1,161 @@
+body {
+  background-color: rgba(246, 247, 212, 0.8);
+}
+.headnav{
+    background-color: rgba(0, 0, 0, 0.80);
+}
+a.btn
+{
+	margin: 30px 10px;
+	width: 150px;
+	padding:10px;
+	border-radius: 20px;
+}
+
+a.btn-first
+{
+	background-color: darkorange;
+	color:#fff;
+}
+
+a.btn-second
+{
+	background:transparent;
+	border: 1px solid darkorange;
+	color: #333;
+}
+
+a.btn:hover
+{
+	background: darkorange;
+	border:none;
+	color: #fff;
+	box-shadow: 5px 5px 10px #999;
+	transition: 0.3s;
+}
+
+.banner-info, .banner-image
+{
+	margin: 30px 0;
+}
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.columns {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.cards {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin:22px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.80);
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .rows::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.titles {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .columns {
+    width: 100%;
+    display: block;
+  }
+}
+* {
+    box-sizing: border-box;
+  }
+
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  /*search-bar placeholder alignment*/
+  input[type="text"] {  
+    text-align: center; 
+} 
+
+.movie-title{
+  margin: 30px 30px 0px 30px;
+  font-weight: 500;
+  font-size: 2rem;
+}
+  
+  
+  /* Float four columns side by side */
+  .column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding in columns */
+  .row {margin: 2px -160px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+  
+  /* Responsive columns - one column layout (vertical) on small screens */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+
+
+/*media query to make menu bar responsive*/
+@media screen and (min-width: 0px) and (max-width: 768px) {
+    .search-bar { display: none; }  /* hide it on small screens */
+  }

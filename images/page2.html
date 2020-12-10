@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prit's Movie</title>
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/page2.css">
+  <!-- Google material-icons css library -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Bootstrap library -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!--website-icon-->
+  <link rel="title icon" href="images/websiteicon.png">
+</head>
+
+<body>
+<!-- Head section -->	
+<nav class="headnav">
+    <div class="container">
+
+      <div class="nav-wrapper">
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+        <a href="#" class="brand-logo">Movie World</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><input type="text" id="myInput" class="search-bar" placeholder="Find Your Favourite Movies" name="search">
+          </li>
+
+          <li><a class="active" href="index.html"><i
+                class="material-icons left">home</i>Home</a></li>
+
+          <li><a href="aboutus.html"><i class="material-icons left">people</i>About Us</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <ul id="slide-out" class="sidenav">
+    <li>
+      <div class="user-view">
+    <li><a href="aboutus.html"><i class="material-icons">home</i>Home</a></li>
+    <li><a href="aboutus.html"><i class="material-icons">people</i>About Us</a></li>
+    </div>
+
+  </ul>
+  <!-- Movie Info section -->
+  <div class="container">
+	<div class="row">
+		<div class="col-sm-6 banner-info" >
+			<a href=""><h1 class="big-text" id="namee"> </h1></a>
+			<a class="btn btn-first" href="#" onclick="toggle();">Watch Trailer</a>
+			<p class="ddd">
+					<small class="number"><a href=""  id="datee"></a></small> 
+					
+					
+					Directed by <a href=""><span class="prettify" id="director"></span></a>
+					
+				
+				</p>
+				
+				<p class="ddd" >
+					
+					 Content Type: <a href=""><span class="prettify" id="content"></span></a>				
+				</p>
+				<p class="ddd" >
+					
+					 Rating: <a href=""><span class="prettify" id="rating"></span></a>				
+				</p>
+				<p class="ddd">
+					
+					 Cost: <a href=""><span class="prettify" id="cost"></span></a>
+				
+				</p>
+				<p class="ddd">
+					
+					 Prise: <a href=""><span class="prettify" id="prise"></span></a>
+				
+				</p>
+				<p class="ddd">
+					
+					 About: <span class="prettify" id="desc"></span>
+				
+				</p>
+				
+				<a class="btn btn-second" href="reser.html">Reserve</a>
+			
+		</div>
+		
+		<div class="col-sm-6 banner-image" >
+			<img class= "img-responsive sed" id="pic"><!-- Movie Image -->
+		</div>
+		
+	</div>
+</div>
+
+<div class="trailer">
+	<video id="trai"  controls="true"><!-- Trailer video  -->
+	
+	
+	</video>
+	<img src="close1.png" class="close" onclick="toggle();"></img><!-- Cancel image -->
+</div>
+
+
+
+  
+  <script class="text/javascript">
+	
+	
+		//accept the array and store into a variable.
+		 var sessionString = sessionStorage.getItem('TheArray');
+		 
+		
+		 //Parsing the array variable using JSON.parse.
+		 var page2Array = JSON.parse(sessionString);
+		 //console.log(page2Array);
+		 var url=page2Array.image_url;
+		 var img=new Image();
+		 img.src=url;
+		  
+		  //setting value to the Element by getting there id.
+		 document.getElementById("namee").innerHTML = page2Array.title;
+		 document.getElementById("desc").innerHTML = page2Array.description;
+		 document.getElementById("content").innerHTML = page2Array.content_type;
+		 document.getElementById("rating").innerHTML = page2Array.rating;
+		  document.getElementById("prise").innerHTML = page2Array.prise;
+		  document.getElementById("director").innerHTML = page2Array.director;
+		   document.getElementById("cost").innerHTML = page2Array.cost;
+		 document.getElementById("datee").innerHTML = page2Array.date;
+		 document.getElementById("pic").src = page2Array.image_url;
+		
+		
+		// Toggle function start
+		function toggle(){
+		var trailer=document.querySelector('.trailer');
+		var video=document.querySelector('video');
+		var trai = document.getElementById('trai');
+		trai.setAttribute("src",page2Array.url);
+		trai.load();
+		trailer.classList.toggle('active')
+		video.currentTime=0;
+		video.pause();
+	}//toggle function end.
+  
+		
+	</script>
+	
+</body>
+</html> 	
